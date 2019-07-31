@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div>
+  <p>
+    You could buy 
+    NaN Big Mac
+     in your country.
+  </p>
+  <p>
+    Your Dollar Purchasing Parity (PPP) is 
+    NaN
+    .
+  </p>
+</div>
+`;

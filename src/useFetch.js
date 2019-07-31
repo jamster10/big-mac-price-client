@@ -15,7 +15,6 @@ export const useFetch = (url) => {
         setState({status: "error", loading: false})
       }
       const data = await res.json();
-      console.log(data)
       setState({country: data.country, loading: false})
     }
     grabData(); 

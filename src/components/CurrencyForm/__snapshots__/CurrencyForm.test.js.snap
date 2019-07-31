@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="currency-form"
+>
+  <h1>
+    You are in 
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="currency-amount"
+    >
+      Please enter an amount of money in your local currency: 
+    </label>
+    <input
+      id="currency-amount"
+      min="0"
+      required={true}
+      type="number"
+    />
+    <input
+      type="submit"
+      value="Evaluate"
+    />
+  </form>
+</div>
+`;

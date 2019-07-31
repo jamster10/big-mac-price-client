@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div>
+  <h2>
+    Random Country: 
+  </h2>
+  <p>
+    You could buy 
+    NaN Big Mac
+     in 
+     with 
+    !
+  </p>
+  <p>
+    Your 
+     is worth about 
+    NaN dollar
+     in 
+    .
+  </p>
+</div>
+`;
