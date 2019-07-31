@@ -12,10 +12,10 @@ export const useFetch = (url) => {
       const res = await fetch(url)
       
       if(!res.ok){
-        setState({status: "error", loading: false})
+        setState({country: "United States", loading: false})//default to United States if error
       }
       const data = await res.json();
-      setState({country: data.country, loading: false})
+      setState({country: data.country ||'United States ', loading: false})//default to United States if no country data.
     }
     grabData(); 
   }, [url, setState])
