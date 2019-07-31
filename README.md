@@ -2,7 +2,7 @@
 
 A simple utility to see the price of a big mac in other countries using data from https://github.com/zelima/big-mac-index/blob/master/data/big-mac-index.csv.
 
-This project has full suite of passing tests on Client and Server.
+This project has a full suite of passing tests on Client and Server.
 
 Server Repo: https://github.com/jamster10/big-mac-price-server.
 
