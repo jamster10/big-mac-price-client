@@ -4,17 +4,20 @@ import { useFetch } from "./useFetch";
 import RandomResult from "./components/RandomResult/RandomResult";
 import CurrencyForm from "./components/CurrencyForm/CurrencyForm";
 import LocalResults from "./components/LocalResult/LocalResult";
+import Loading from "./components/Loading/Loading"
 import BigMacApi from "./services/bigmac-api";
+
 
 function App() {
   const { country } = useFetch("https://extreme-ip-lookup.com/json/");
 
+  const [loading, setLoading] = useState(false)
   const [countryData, setCountryData] = useState(null); //fetched country data
   const [amount, setAmount] = useState(100);
+ 
   const handleAmount = e => {
     let { value } = e.target;
     value = value.replace(/^0+/, "");
-
     if (isNaN(parseInt(value))) {
       errorHandler({ message: `Invalid Number. No negative values` });
       return;
@@ -31,21 +34,25 @@ function App() {
   };
 
   const handleSubmit = async (e, amount) => {
+    setLoading(true)
     e.preventDefault();
 
     try {
       const data = await BigMacApi.getData(country);
+      setLoading(false)
       setCountryData({
         currentCountry: data.currentCountry,
         randomCountry: data.randomCountry
       });
     } catch (e) {
+      setLoading(false)
       errorHandler(e);
     }
   };
 
   return (
     <div className="App">
+      {loading && <Loading/>}
       <p className="error">{error && error}</p>
       <CurrencyForm
         country={country}
